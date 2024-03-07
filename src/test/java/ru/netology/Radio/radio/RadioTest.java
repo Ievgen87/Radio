@@ -8,8 +8,8 @@ public class RadioTest {
 
 
     @Test
-    public void shouldSetNumberRadioStation () {
-        Radio rad = new Radio();
+    public void shouldSetNumberRadioStation() {
+        Radio rad = new Radio(10);
         rad.setNumberRadioStation(8);
         int expected = 8;
         int actual = rad.getNumberRadioStation();
@@ -17,8 +17,8 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetNumberStation () {
-        Radio rad = new Radio();
+    public void shouldSetNumberStation() {
+        Radio rad = new Radio(10);
         rad.setNumberRadioStation(10);
         int expected = 0;
         int actual = rad.getNumberRadioStation();
@@ -26,8 +26,8 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetNegativeNumberStation () {
-        Radio rad = new Radio();
+    public void shouldSetNegativeNumberStation() {
+        Radio rad = new Radio(10);
         rad.setNumberRadioStation(-1);
         int expected = 0;
         int actual = rad.getNumberRadioStation();
@@ -37,7 +37,7 @@ public class RadioTest {
 
     @Test
     public void shouldSetMaxRadioStation() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(10);
         rad.setMaxNumberRadioStation();
         int expected = 9;
         int actual = rad.getNumberRadioStation();
@@ -46,7 +46,7 @@ public class RadioTest {
 
     @Test
     public void pressNextMaxStation() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(10);
         rad.setNumberRadioStation(9);
         rad.pressNextStation();
         int expected = 0;
@@ -56,7 +56,7 @@ public class RadioTest {
 
     @Test
     public void pressPrevMinStation() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(10);
         rad.setNumberRadioStation(0);
         rad.pressPrevStation();
         int expected = 9;
@@ -66,7 +66,7 @@ public class RadioTest {
 
     @Test
     public void pressNextStation() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(10);
         rad.setNumberRadioStation(4);
         rad.pressNextStation();
         int expected = 5;
@@ -76,7 +76,7 @@ public class RadioTest {
 
     @Test
     public void pressPrevStation() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(10);
         rad.setNumberRadioStation(6);
         rad.pressPrevStation();
         int expected = 5;
@@ -85,7 +85,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetVolume () {
+    public void shouldSetVolume() {
         Radio rad = new Radio();
         rad.setVolume(77);
         int expected = 77;
@@ -94,7 +94,7 @@ public class RadioTest {
     }
 
     @Test
-    public void pressIncreaseMaxVolume () {
+    public void pressIncreaseMaxVolume() {
         Radio rad = new Radio();
         rad.setVolume(100);
         rad.pressIncreaseVolume();
@@ -104,7 +104,7 @@ public class RadioTest {
     }
 
     @Test
-    public void pressMaxVolume () {
+    public void pressMaxVolume() {
         Radio rad = new Radio();
         rad.setVolume(99);
         rad.pressIncreaseVolume();
@@ -114,7 +114,7 @@ public class RadioTest {
     }
 
     @Test
-    public void pressIncreaseVolume () {
+    public void pressIncreaseVolume() {
         Radio rad = new Radio();
         rad.setVolume(77);
         rad.pressIncreaseVolume();
@@ -124,7 +124,7 @@ public class RadioTest {
     }
 
     @Test
-    public void pressDecreaseMinVolume () {
+    public void pressDecreaseMinVolume() {
         Radio rad = new Radio();
         rad.setVolume(0);
         rad.pressDecreaseVolume();
@@ -134,7 +134,7 @@ public class RadioTest {
     }
 
     @Test
-    public void pressDecreaseVolume () {
+    public void pressDecreaseVolume() {
         Radio rad = new Radio();
         rad.setVolume(44);
         rad.pressDecreaseVolume();
@@ -142,6 +142,4 @@ public class RadioTest {
         int actual = rad.getVolume();
         Assertions.assertEquals(expected, actual);
     }
-
-
 }
