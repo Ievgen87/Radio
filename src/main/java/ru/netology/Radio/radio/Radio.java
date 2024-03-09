@@ -13,8 +13,8 @@ public class Radio {
         this.totalNumberStation = 10;
     }
 
-    public Radio(int totalNumberStation) {
-        this.totalNumberStation = totalNumberStation -1;
+    public Radio(int newTotalNumberStation) {
+        this.maxRadioStation = newTotalNumberStation -1;
     }
 
 
@@ -41,7 +41,7 @@ public class Radio {
     }
 
     public void pressNextStation() {
-        if (numberRadioStation >= totalNumberStation - 1) {
+        if (numberRadioStation >= maxRadioStation) {
             setNumberRadioStation(minRadioStation);
         } else {
             setNumberRadioStation(numberRadioStation + 1);
@@ -49,10 +49,10 @@ public class Radio {
     }
 
     public void pressPrevStation() {
-        if (numberRadioStation <= minRadioStation) {
-            setNumberRadioStation(totalNumberStation - 1);
+        if (numberRadioStation == 0) {
+            numberRadioStation = totalNumberStation - 1;
         } else {
-            setNumberRadioStation(numberRadioStation - 1);
+            numberRadioStation = numberRadioStation - 1;
         }
     }
 
