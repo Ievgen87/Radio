@@ -1,6 +1,5 @@
 package ru.netology.Radio.radio;
 
-import lombok.Getter;
 
 public class Radio {
     private int maxRadioStation;
@@ -8,26 +7,21 @@ public class Radio {
     private int numberRadioStation = minRadioStation;
     private int totalNumberStation;
     private int volume;
-    private int maxVolume = 100;
-    private int minVolume = 0;
 
-    public Radio(){
+
+    public Radio() {
         this.totalNumberStation = 10;
     }
 
-    public Radio (int totalNumberStation) {
-        this.totalNumberStation = totalNumberStation;
+    public Radio(int totalNumberStation) {
+        this.totalNumberStation = totalNumberStation -1;
     }
 
-    public void setMaxNumberRadioStation() {
-        numberRadioStation = minRadioStation + totalNumberStation;
-    }
 
 
     public int getNumberRadioStation() {
         return numberRadioStation;
     }
-
 
 
     public int getVolume() {
@@ -36,10 +30,10 @@ public class Radio {
 
 
     public void setNumberRadioStation(int newNumberRadioStation) {
-        if (newNumberRadioStation  < minRadioStation) {
+        if (newNumberRadioStation < minRadioStation) {
             return;
         }
-        if (newNumberRadioStation  > maxRadioStation) {
+        if (newNumberRadioStation > totalNumberStation - 1) {
             return;
         }
 
@@ -47,7 +41,7 @@ public class Radio {
     }
 
     public void pressNextStation() {
-        if (numberRadioStation >= maxRadioStation) {
+        if (numberRadioStation >= totalNumberStation - 1) {
             setNumberRadioStation(minRadioStation);
         } else {
             setNumberRadioStation(numberRadioStation + 1);
@@ -56,12 +50,11 @@ public class Radio {
 
     public void pressPrevStation() {
         if (numberRadioStation <= minRadioStation) {
-            setNumberRadioStation(maxRadioStation);
+            setNumberRadioStation(totalNumberStation - 1);
         } else {
             setNumberRadioStation(numberRadioStation - 1);
         }
     }
-
 
 
     public void setVolume(int newVolume) {

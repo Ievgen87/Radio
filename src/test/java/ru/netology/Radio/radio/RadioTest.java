@@ -7,22 +7,14 @@ public class RadioTest {
 
     @Test
     public void shouldSetNumberRadioStation() {
-        Radio rad = new Radio(10);
-        rad.setNumberRadioStation(8);
-        int expected = 8;
+        Radio rad = new Radio(20);
+        rad.setNumberRadioStation(15);
+        int expected = 15;
         int actual = rad.getNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
-    public void shouldSetMaxRadioStation() {
-        Radio rad = new Radio(10);
-        rad.setMaxNumberRadioStation();
-        int expected = 9;
-        int actual = rad.getNumberRadioStation();
-        Assertions.assertEquals(expected, actual);
 
-    }
 
     @Test
     public void shouldSetNumberStation() {
