@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
 
-
-
     @Test
     public void shouldSetNumberRadioStation() {
         Radio rad = new Radio(10);
@@ -14,6 +12,16 @@ public class RadioTest {
         int expected = 8;
         int actual = rad.getNumberRadioStation();
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldSetMaxRadioStation() {
+        Radio rad = new Radio(10);
+        rad.setMaxNumberRadioStation();
+        int expected = 9;
+        int actual = rad.getNumberRadioStation();
+        Assertions.assertEquals(expected, actual);
+
     }
 
     @Test
@@ -35,14 +43,6 @@ public class RadioTest {
     }
 
 
-    @Test
-    public void shouldSetMaxRadioStation() {
-        Radio rad = new Radio(10);
-        rad.setMaxNumberRadioStation();
-        int expected = 9;
-        int actual = rad.getNumberRadioStation();
-        Assertions.assertEquals(expected, actual);
-    }
 
     @Test
     public void pressNextMaxStation() {
